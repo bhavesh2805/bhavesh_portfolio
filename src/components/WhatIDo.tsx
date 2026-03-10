@@ -38,110 +38,65 @@ const WhatIDo = () => {
         <div className="what-box-in">
           <div className="what-border2">
             <svg width="100%">
-              <line
-                x1="0"
-                y1="0"
-                x2="0"
-                y2="100%"
-                stroke="white"
-                strokeWidth="2"
-                strokeDasharray="7,7"
-              />
-              <line
-                x1="100%"
-                y1="0"
-                x2="100%"
-                y2="100%"
-                stroke="white"
-                strokeWidth="2"
-                strokeDasharray="7,7"
-              />
+              <line x1="0" y1="0" x2="0" y2="100%" stroke="white" strokeWidth="2" strokeDasharray="7,7" />
+              <line x1="100%" y1="0" x2="100%" y2="100%" stroke="white" strokeWidth="2" strokeDasharray="7,7" />
             </svg>
           </div>
-          <div
-            className="what-content what-noTouch"
-            ref={(el) => setRef(el, 0)}
-          >
+          <div className="what-content what-noTouch" ref={(el) => setRef(el, 0)}>
             <div className="what-border1">
               <svg height="100%">
-                <line
-                  x1="0"
-                  y1="0"
-                  x2="100%"
-                  y2="0"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="6,6"
-                />
-                <line
-                  x1="0"
-                  y1="100%"
-                  x2="100%"
-                  y2="100%"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="6,6"
-                />
+                <line x1="0" y1="0" x2="100%" y2="0" stroke="white" strokeWidth="2" strokeDasharray="6,6" />
+                <line x1="0" y1="100%" x2="100%" y2="100%" stroke="white" strokeWidth="2" strokeDasharray="6,6" />
               </svg>
             </div>
             <div className="what-corner"></div>
-
             <div className="what-content-in">
-              <h3>FRONTEND</h3>
-              <h4>Building Interactive UIs</h4>
+              <h3>DATA ENGINEERING</h3>
+              <h4>Building Scalable Pipelines</h4>
               <p>
-                Crafting performant, responsive interfaces with modern frameworks.
-                From SPAs to micro-frontends, I deliver pixel-perfect experiences.
+                Designing and deploying end-to-end data pipelines and ETL workflows.
+                From batch processing to real-time streaming, I build robust infrastructure
+                that turns raw data into reliable, analytics-ready datasets.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">React.js</div>
-                <div className="what-tags">Angular</div>
-                <div className="what-tags">Next.js</div>
-                <div className="what-tags">TypeScript</div>
-                <div className="what-tags">JavaScript</div>
-                <div className="what-tags">Material UI</div>
-                <div className="what-tags">HTML5</div>
-                <div className="what-tags">CSS3</div>
+                <div className="what-tags">Python</div>
+                <div className="what-tags">SQL</div>
+                <div className="what-tags">Apache Spark</div>
+                <div className="what-tags">Airflow</div>
+                <div className="what-tags">dbt</div>
+                <div className="what-tags">Snowflake</div>
+                <div className="what-tags">GCP</div>
+                <div className="what-tags">BigQuery</div>
               </div>
               <div className="what-arrow"></div>
             </div>
           </div>
-          <div
-            className="what-content what-noTouch"
-            ref={(el) => setRef(el, 1)}
-          >
+          <div className="what-content what-noTouch" ref={(el) => setRef(el, 1)}>
             <div className="what-border1">
               <svg height="100%">
-                <line
-                  x1="0"
-                  y1="100%"
-                  x2="100%"
-                  y2="100%"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="6,6"
-                />
+                <line x1="0" y1="100%" x2="100%" y2="100%" stroke="white" strokeWidth="2" strokeDasharray="6,6" />
               </svg>
             </div>
             <div className="what-corner"></div>
             <div className="what-content-in">
-              <h3>BACKEND</h3>
-              <h4>Scalable Server Architecture</h4>
+              <h3>AI / ML ENGINEERING</h3>
+              <h4>Intelligent Systems at Scale</h4>
               <p>
-                Designing robust APIs and microservices. From CMS platforms to
-                complex business logic, I build backends that scale.
+                Building and deploying machine learning and NLP models for real-world applications.
+                From fraud detection pipelines to RAG-based conversational AI, I engineer
+                solutions that are accurate, explainable, and production-ready.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">Node.js</div>
-                <div className="what-tags">NestJS</div>
-                <div className="what-tags">Express.js</div>
-                <div className="what-tags">MongoDB</div>
-                <div className="what-tags">PostgreSQL</div>
-                <div className="what-tags">REST APIs</div>
-                <div className="what-tags">Microservices</div>
-                <div className="what-tags">Python</div>
+                <div className="what-tags">TensorFlow</div>
+                <div className="what-tags">PyTorch</div>
+                <div className="what-tags">Scikit-learn</div>
+                <div className="what-tags">LangChain</div>
+                <div className="what-tags">FAISS</div>
+                <div className="what-tags">HuggingFace</div>
+                <div className="what-tags">BERT</div>
+                <div className="what-tags">GPT-4</div>
               </div>
               <div className="what-arrow"></div>
             </div>
@@ -159,7 +114,6 @@ function handleClick(container: HTMLDivElement) {
   container.classList.remove("what-sibling");
   if (container.parentElement) {
     const siblings = Array.from(container.parentElement.children);
-
     siblings.forEach((sibling) => {
       if (sibling !== container) {
         sibling.classList.remove("what-content-active");

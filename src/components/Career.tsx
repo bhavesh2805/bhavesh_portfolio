@@ -1,5 +1,4 @@
 import "./styles/Career.css";
-
 const Career = () => {
   return (
     <div className="career-section section-container">
@@ -15,43 +14,55 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Full Stack Developer</h4>
-                <h5>Ikshan</h5>
-              </div>
-              <h3>2020</h3>
-            </div>
-            <p>
-              Built 6+ complete applications using React.js. Integrated backend
-              authentication using Node.js & MongoDB. Created responsive UI/UX
-              and designed wireframes using Figma.
-            </p>
-          </div>
-          <div className="career-info-box">
-            <div className="career-info-in">
-              <div className="career-role">
-                <h4>Senior Full Stack Developer</h4>
-                <h5>Monocept (Max Life Insurance)</h5>
+                <h4>Web Development Intern</h4>
+                <h5>Intern Crowd LLP</h5>
               </div>
               <h3>2021</h3>
             </div>
             <p>
-              Led two development teams on Mpro, a large-scale insurance
-              operations platform. Developed multiple modules using React.js &
-              migrated critical functionalities to Node.js microservices.
+              Developed and maintained web application features, collaborating
+              with the team to deliver responsive and user-friendly interfaces.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Full Stack Developer</h4>
-                <h5>Logic Loop</h5>
+                <h4>Data Analyst Intern</h4>
+                <h5>Oasis Infobyte</h5>
+              </div>
+              <h3>2022</h3>
+            </div>
+            <p>
+              Analyzed large datasets to extract actionable insights, built
+              dashboards, and automated reporting workflows using Python and SQL.
+            </p>
+          </div>
+          <div className="career-info-box">
+            <div className="career-info-in">
+              <div className="career-role">
+                <h4>Data Science Intern</h4>
+                <h5>TEACHNOOK</h5>
+              </div>
+              <h3>2022</h3>
+            </div>
+            <p>
+              Built and deployed machine learning models for classification and
+              prediction tasks. Applied NLP techniques and data preprocessing
+              pipelines to drive data-driven decision making.
+            </p>
+          </div>
+          <div className="career-info-box">
+            <div className="career-info-in">
+              <div className="career-role">
+                <h4>M.S. Data Analytics Engineering</h4>
+                <h5>Northeastern University</h5>
               </div>
               <h3>NOW</h3>
             </div>
             <p>
-              Building Solid, a proprietary low-code platform using Angular,
-              Next.js & NestJS. Delivering production-ready CMS-based projects
-              including e-commerce, CRM, and import-export automation systems.
+              Advancing expertise in AI/ML, NLP, and data engineering. Building
+              production-grade systems including a RAG-based conversational AI,
+              ECG signal classifier, and fraud detection pipeline.
             </p>
           </div>
         </div>
@@ -59,5 +70,4 @@ const Career = () => {
     </div>
   );
 };
-
 export default Career;

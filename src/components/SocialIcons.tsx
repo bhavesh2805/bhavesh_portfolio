@@ -1,9 +1,4 @@
-import {
-  FaGithub,
-  FaInstagram,
-  FaLinkedinIn,
-  FaXTwitter,
-} from "react-icons/fa6";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import "./styles/SocialIcons.css";
 import { TbNotes } from "react-icons/tb";
 import { useEffect } from "react";
@@ -26,17 +21,14 @@ const SocialIcons = () => {
       const updatePosition = () => {
         currentX += (mouseX - currentX) * 0.1;
         currentY += (mouseY - currentY) * 0.1;
-
         link.style.setProperty("--siLeft", `${currentX}px`);
         link.style.setProperty("--siTop", `${currentY}px`);
-
         requestAnimationFrame(updatePosition);
       };
 
       const onMouseMove = (e: MouseEvent) => {
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-
         if (x < 40 && x > 10 && y < 40 && y > 5) {
           mouseX = x;
           mouseY = y;
@@ -47,7 +39,6 @@ const SocialIcons = () => {
       };
 
       document.addEventListener("mousemove", onMouseMove);
-
       updatePosition();
 
       return () => {
@@ -60,27 +51,17 @@ const SocialIcons = () => {
     <div className="icons-section">
       <div className="social-icons" data-cursor="icons" id="social">
         <span>
-          <a href="https://github.com/rajeshchityal" target="_blank">
+          <a href="https://github.com/bhavesh2805" target="_blank">
             <FaGithub />
           </a>
         </span>
         <span>
-          <a href="https://www.linkedin.com/in/rajeshchityal" target="_blank">
+          <a href="https://linkedin.com/in/bhaveshkulkarni" target="_blank">
             <FaLinkedinIn />
           </a>
         </span>
-        <span>
-          <a href="https://x.com/rajeshchityal" target="_blank">
-            <FaXTwitter />
-          </a>
-        </span>
-        <span>
-          <a href="https://www.instagram.com/rajeshchityal" target="_blank">
-            <FaInstagram />
-          </a>
-        </span>
       </div>
-      <a className="resume-button" href="#">
+      <a className="resume-button" href="/Bhavesh_Kulkarni_Resume.pdf" target="_blank">
         <HoverLinks text="RESUME" />
         <span>
           <TbNotes />

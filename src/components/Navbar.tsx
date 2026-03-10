@@ -39,18 +39,19 @@ const Navbar = () => {
       ScrollSmoother.refresh(true);
     });
   }, []);
+
   return (
     <>
       <div className="header">
         <a href="/#" className="navbar-title" data-cursor="disable">
-          RC
+          BK
         </a>
         <a
-          href="mailto:rajeshchittyal21@gmail.com"
+          href="mailto:kulkarnibhavesh90@gmail.com"
           className="navbar-connect"
           data-cursor="disable"
         >
-          rajeshchittyal21@gmail.com
+          kulkarnibhavesh90@gmail.com
         </a>
         <ul>
           <li>

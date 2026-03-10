@@ -1,141 +1,91 @@
-import { useState, useCallback } from "react";
-import "./styles/Work.css";
-import WorkImage from "./WorkImage";
-import { MdArrowBack, MdArrowForward } from "react-icons/md";
+import "./styles/Career.css";
+import { MdArrowOutward } from "react-icons/md";
 
 const projects = [
   {
-    title: "Solid Starters",
-    category: "Low-Code Platform",
-    tools: "Angular, Next.js, NestJS, MongoDB",
-    image: "/images/Solidx.png",
+    title: "ECG Signal Classification",
+    desc: "Deep learning system using BERT & GPT-2 to classify ECG signals with 96.4% accuracy. Built end-to-end pipeline for cardiac arrhythmia detection.",
+    tags: ["Python", "BERT", "GPT-2", "TensorFlow"],
+    link: "https://github.com/bhavesh2805",
+    color: "#0f002c",
   },
   {
-    title: "Radix",
-    category: "E-Commerce",
-    tools: "Angular, Next.js, NestJS, CMS",
-    image: "/images/radix.png",
+    title: "AI-Driven Fraud Detection",
+    desc: "End-to-end fraud detection pipeline processing 590K+ transactions achieving ROC-AUC of 0.9556. Features real-time scoring and automated alerting.",
+    tags: ["Python", "Scikit-learn", "SQL", "GCP"],
+    link: "https://github.com/bhavesh2805",
+    color: "#001a1a",
   },
   {
-    title: "Bond Cancellation",
-    category: "Import-Export Automation",
-    tools: "Angular, Next.js, NestJS, Workflows",
-    image: "/images/bond.png",
+    title: "RAG Conversational AI",
+    desc: "Intelligent product recommendation chatbot using Sentence-BERT, FAISS vector database, and GPT-4/Llama-3. Deployed with CI/CD pipeline.",
+    tags: ["LangChain", "FAISS", "GPT-4", "Llama-3"],
+    link: "https://github.com/bhavesh2805",
+    color: "#1a0010",
   },
   {
-    title: "Sapphire",
-    category: "CRM Platform",
-    tools: "AngularJS, NestJS, PostgreSQL",
-    image: "/images/sapphire.png",
-  },
-  {
-    title: "Mpro",
-    category: "Insurance Platform",
-    tools: "React.js, Node.js, Microservices",
-    image: "/images/Maxlife.png",
+    title: "NLP Classifier from Scratch",
+    desc: "Multinomial Naive Bayes text classifier built from scratch using only NumPy. Implements tokenization, smoothing, and evaluation metrics manually.",
+    tags: ["Python", "NumPy", "NLP"],
+    link: "https://github.com/bhavesh2805",
+    color: "#0a1a00",
   },
 ];
 
 const Work = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
-
-  const goToSlide = useCallback(
-    (index: number) => {
-      if (isAnimating) return;
-      setIsAnimating(true);
-      setCurrentIndex(index);
-      setTimeout(() => setIsAnimating(false), 500);
-    },
-    [isAnimating]
-  );
-
-  const goToPrev = useCallback(() => {
-    const newIndex =
-      currentIndex === 0 ? projects.length - 1 : currentIndex - 1;
-    goToSlide(newIndex);
-  }, [currentIndex, goToSlide]);
-
-  const goToNext = useCallback(() => {
-    const newIndex =
-      currentIndex === projects.length - 1 ? 0 : currentIndex + 1;
-    goToSlide(newIndex);
-  }, [currentIndex, goToSlide]);
-
   return (
-    <div className="work-section" id="work">
-      <div className="work-container section-container">
+    <div className="career-section section-container" id="work">
+      <div className="career-container">
         <h2>
-          My <span>Work</span>
+          My <span>&</span>
+          <br /> Projects
         </h2>
-
-        <div className="carousel-wrapper">
-          {/* Navigation Arrows */}
-          <button
-            className="carousel-arrow carousel-arrow-left"
-            onClick={goToPrev}
-            aria-label="Previous project"
-            data-cursor="disable"
-          >
-            <MdArrowBack />
-          </button>
-          <button
-            className="carousel-arrow carousel-arrow-right"
-            onClick={goToNext}
-            aria-label="Next project"
-            data-cursor="disable"
-          >
-            <MdArrowForward />
-          </button>
-
-          {/* Slides */}
-          <div className="carousel-track-container">
-            <div
-              className="carousel-track"
-              style={{
-                transform: `translateX(-${currentIndex * 100}%)`,
-              }}
-            >
-              {projects.map((project, index) => (
-                <div className="carousel-slide" key={index}>
-                  <div className="carousel-content">
-                    <div className="carousel-info">
-                      <div className="carousel-number">
-                        <h3>0{index + 1}</h3>
-                      </div>
-                      <div className="carousel-details">
-                        <h4>{project.title}</h4>
-                        <p className="carousel-category">
-                          {project.category}
-                        </p>
-                        <div className="carousel-tools">
-                          <span className="tools-label">Tools & Features</span>
-                          <p>{project.tools}</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="carousel-image-wrapper">
-                      <WorkImage image={project.image} alt={project.title} />
-                    </div>
-                  </div>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "2rem", marginTop: "2rem" }}>
+          {projects.map((p, i) => (
+            <div key={i} style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+              <a
+                href={p.link}
+                target="_blank"
+                rel="noreferrer"
+                style={{
+                  background: p.color,
+                  borderRadius: "12px",
+                  height: "200px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  position: "relative",
+                  textDecoration: "none",
+                  border: "1px solid rgba(255,255,255,0.1)",
+                  cursor: "pointer",
+                }}
+              >
+                <div style={{ position: "absolute", top: "1rem", right: "1rem", color: "white" }}>
+                  <MdArrowOutward size={20} />
                 </div>
-              ))}
+                <span style={{ color: "rgba(255,255,255,0.3)", fontSize: "1rem", padding: "1rem", textAlign: "center" }}>
+                  {p.title}
+                </span>
+              </a>
+              <div>
+                <h4 style={{ color: "white", marginBottom: "0.5rem" }}>{p.title}</h4>
+                <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.9rem", marginBottom: "0.75rem" }}>{p.desc}</p>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+                  {p.tags.map((tag, j) => (
+                    <span key={j} style={{
+                      background: "rgba(255,255,255,0.1)",
+                      color: "rgba(255,255,255,0.8)",
+                      padding: "0.25rem 0.75rem",
+                      borderRadius: "999px",
+                      fontSize: "0.8rem",
+                    }}>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
-          </div>
-
-          {/* Dot Indicators */}
-          <div className="carousel-dots">
-            {projects.map((_, index) => (
-              <button
-                key={index}
-                className={`carousel-dot ${index === currentIndex ? "carousel-dot-active" : ""
-                  }`}
-                onClick={() => goToSlide(index)}
-                aria-label={`Go to project ${index + 1}`}
-                data-cursor="disable"
-              />
-            ))}
-          </div>
+          ))}
         </div>
       </div>
     </div>
